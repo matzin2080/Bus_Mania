@@ -32,7 +32,7 @@ void logo2(){
     printf("| Jogo Bus Mania |\n");
     printf("——————————————————\n");
 }
-//função faz a fila ser testada toda vez que o onibus muda.
+//função faz a fila ser testada toda vez que o ônibus muda.
 void verifica_fila(info *fase, char fila[5], char asentos[3],int *cont_fila, int *cont_asento, int *cont, usuario *jogador){
     int mudou = 1;
     while (mudou && *cont_fila > 0){
@@ -133,18 +133,18 @@ void jogo(){
             printf("Digite as coordenadas:");
             scanf("%d %d", &x, &y);
             if (fase.mapa[x - 1][y - 1] == '_'|| x > fase.le_lin || x < 1 || y > 10 || y < 1 ){
-                printf("Movimento Invalido Tente Novamente\nTecle ENTER\n");
+                printf("Movimento Invalido Tente Novamente\nPrecione ENTER\n");
                 getchar(); getchar();
                 continue;
             }
             if (fase.mapa[x - 1][y - 1] == ' '){
-                printf("Você ja fez esse movimento\nTecle ENTER\n");
+                printf("Você ja fez esse movimento\nPrecione ENTER\n");
                 getchar(); getchar();
                 continue;
             }
             if(x > 1){
                 if(fase.mapa[x - 2][y - 1] != ' ' && (y == 1 || fase.mapa[x - 1][y - 2] != ' ') && (y == 10 || fase.mapa[x - 1][y] != ' ')){
-                printf("Movimento Bloqueado\nTecle ENTER\n");
+                printf("Movimento Bloqueado\nPrecione ENTER\n");
                 getchar(); getchar();
                 continue;
                 }
@@ -170,7 +170,7 @@ void jogo(){
                 printf("|Com esse movimento você lotou a fila de espera|\n");
                 printf("|                você perdeu😔😭               |\n");
                 printf("|                                              |\n");
-                printf("|                 Aperte ENTER                 |\n");
+                printf("|                 Precione ENTER               |\n");
                 printf("————————————————————————————————————————————————\n");
                 FILE * fd = fopen("ranking.bin", "ab");
                 if (fd == NULL){
@@ -220,7 +220,7 @@ void jogo(){
                     printf("|     Parabens!!! Você completou o jogo!!      |\n");
                     printf("|              Sua pontuação: %d              |\n", jogador.pontos);
                     printf("|                                              |\n");
-                    printf("|                 Aperte ENTER                 |\n");
+                    printf("|                 Precione ENTER                 |\n");
                     printf("————————————————————————————————————————————————\n");
                     getchar(); getchar();
                     fclose(entrada);
@@ -303,7 +303,7 @@ void editor(){
         fprintf(edicao, "%c\n", edit[i].final);
     }
         fclose(edicao);
-    printf("\nFase Criada com Sucesso!\nAperte ENTER para voltar...");
+    printf("\nFase Criada com Sucesso!\nPrecione ENTER para voltar...");
     getchar();getchar();
     return;
 }
@@ -332,7 +332,7 @@ void dificulade(){
             }
             fclose(modo);
             strcpy(jogador.mododejogo, "facil.txt");
-            printf("\nModo Facil seliconado com secesso!!\nAperte ENTER para voltar...");
+            printf("\nModo Facil seliconado com secesso!!\nPrecione ENTER para voltar...");
             getchar(); getchar();
             modo_ativo = 0;
             break;
@@ -346,7 +346,7 @@ void dificulade(){
             }
             fclose(modo);
             strcpy(jogador.mododejogo, "entrada.txt");
-            printf("\nModo Normal seliconado com secesso!!\nAperte ENTER para voltar...");
+            printf("\nModo Normal seliconado com secesso!!\nPrecione ENTER para voltar...");
             getchar(); getchar();
             modo_ativo = 0;
             break;
@@ -360,7 +360,7 @@ void dificulade(){
             }
             fclose(modo);
             strcpy(jogador.mododejogo, "dificil.txt");
-            printf("\nModo Difícil seliconado com secesso!!\nAperte ENTER para voltar...");
+            printf("\nModo Difícil seliconado com secesso!!\nPrecione ENTER para voltar...");
             getchar(); getchar();
             modo_ativo = 0;
             break;
@@ -370,12 +370,12 @@ void dificulade(){
             scanf("%s", jogador.mododejogo);
             FILE* modo = fopen(jogador.mododejogo, "r");
             if (modo == NULL){
-                printf("Fase não encontrada\nAperte ENTER para voltar...");
+                printf("Fase não encontrada\nPrecione ENTER para voltar...");
                 getchar(); getchar();
                 break;
             }
             fclose(modo);
-            printf("\nFase(s) carregada(S) com sucesso!!\nAperte ENTER para voltar...");
+            printf("\nFase(s) carregada(S) com sucesso!!\nPrecione ENTER para voltar...");
             getchar(); getchar();
             modo_ativo = 0;
             break;
@@ -416,7 +416,7 @@ void config(){
                 if (confirma == 's' || confirma == 'S'){
                     FILE* confere = fopen("ranking.bin", "rb");
                     if (confere == NULL){
-                        printf("Não ha registro de ranking ainda!\nAperte ENTER para voltar...");
+                        printf("Não há registro de ranking ainda!\nPrecione ENTER para voltar...");
                         getchar();getchar();
                         return;
                     }
@@ -454,7 +454,7 @@ int main(){
     #endif
     limp_tela();
     printf("——————————————————————————————————————\n");
-    printf("| Bem vindo(a)! ao Jogo Bus Mania!!! |\n");
+    printf("| Bem-vindo(a)! ao Jogo Bus Mania!!! |\n");
     printf("——————————————————————————————————————\n");
     printf("\n\n\nDigite seu nickname: ");
     scanf("%19[^\n]", jogador.nome);
@@ -482,7 +482,7 @@ int main(){
             printf("—————————————————————————————————————————————————————————————————\n");
             printf("|                 INSTRUÇÕES DE JOGO: BUS MANIA                 |\n");
             printf("—————————————————————————————————————————————————————————————————\n");
-            printf("| 1. OBJETIVO: Mover os passageiros do grid para os onibus.     |\n");
+            printf("| 1. OBJETIVO: Mover os passageiros do grid para os ônibus.     |\n");
             printf("| 2. COMANDOS: Digite a Linha e a Coluna (ex: '1 5').           |\n");
             printf("| 3. BLOQUEIO: Se você selecionar uma posição e ele não for     |\n");
             printf("|    o primeiro ele não pode se mover                           |\n");
@@ -492,7 +492,7 @@ int main(){
             printf("|                   COMO USAR O EDITOR DE FASES                   |\n");
             printf("———————————————————————————————————————————————————————————————————\n");
             printf("| A. NOME DO ARQUIVO: Escolha um nome com '.txt' (ex: mapa1.txt). |\n");
-            printf("| B. CONFIGURAÇÃO: Defina a quantidade de onibus, os tipos        |\n");
+            printf("| B. CONFIGURAÇÃO: Defina a quantidade de ônibus, os tipos        |\n");
             printf("|    de passageiros (ex: A, *, @) e o tamanho da matriz.          |\n");
             printf("| C. O GRID (10 Colunas): Digite os caracteres linha por linha.   |\n");
             printf("|    Use '_' (underline) para preencher todo o grid               |\n");
@@ -501,7 +501,7 @@ int main(){
             printf("| D. COMO JOGAR SUA FASE: Vá em Configurações -> Dificuldade ->   |\n");
             printf("|    Opção 4, digite o nome do arquivo salvo e divirta-se!        |\n");
             printf("———————————————————————————————————————————————————————————————————\n");
-            printf("\nAperte ENTER para voltar...");
+            printf("\nPrecione ENTER para voltar...");
             getchar();getchar();
             break;
         case 4:
@@ -512,7 +512,7 @@ int main(){
             printf("\n           RANKING\n\n");
             FILE* le = fopen("ranking.bin", "rb");
             if (le == NULL){
-                printf("Não ha registro de ranking ainda!\nAperte ENTER para voltar...");
+                printf("Não há registro de ranking ainda!\nPrecione ENTER para voltar...");
                 getchar();getchar();
                 continue;
             }
@@ -541,13 +541,13 @@ int main(){
             break;
         case 5:
             limp_tela();
-            printf("Obrigado por jogar!\nAte logo!\n");
+            printf("Obrigado por jogar!\nAté logo!\n");
             rodando = 0;
             return 0;
             break;
         default:
             limp_tela();
-            printf("Obrigado por jogar!\nAte logo!\n");
+            printf("Obrigado por jogar!\nAté logo!\n");
             rodando = 0;
             return 0;
             break;
