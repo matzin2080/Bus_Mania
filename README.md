@@ -1,10 +1,18 @@
-# Bus_Mania
-Jogo eu feito como projeto final da materia de Algoritmos e Programação de Computadores (apc) conta com a implementação do modo de dificuldade e o modo de edição de fases.
+# Bus Mania
 
-O modo de dificuldade possui 4 opções modo fácil, normal, difícil e o modo para jogar as fases feitas no modo de edição, o jogo começa com o arquivo de "entrada.txt".
+Jogo desenvolvido como projeto final da matéria de **Algoritmos e Programação de Computadores (APC)**. O projeto conta com implementação de seletores de dificuldade e um editor de fases integrado.
 
-No modo de edição e no modo de escolher a fase "feita por você" coloque no final o ".txt" ao final do nome.
+### 🎮 Modos de Jogo
+O modo de dificuldade possui 4 opções:
+* **Fácil** (utiliza o arquivo `facil.txt`)
+* **Normal** (inicia por padrão com o arquivo `entrada.txt`)
+* **Difícil** (utiliza o arquivo `dificil.txt`)
+* **Fases Personalizadas** (para carregar fases criadas no modo editor)
 
-Junto do código vem 2 outros arquivos "facil.txt" e "dificil.txt" com as fases dos respectivos modos
+> **Nota:** Ao salvar ou carregar uma fase criada por você, certifique-se de incluir a extensão `.txt` ao final do nome do arquivo (ex: `minhafase.txt`).
 
-Nas instruções dentro do jogo tá tudo explicadinho tanto as regras como o uso do modo de edição. No mas acho que deixei o jogo o mais intuitivo e bonito da medida do possível. 
+### 🛠️ Arquivos do Repositório
+Junto do código principal (`bus_mania.c`), estão inclusos os arquivos `facil.txt`, `entrada.txt` e `dificil.txt` com as fases pré-configuradas.
+
+### 📜 Instruções
+Dentro do menu do próprio jogo há uma seção de instruções detalhando tanto as regras da partida quanto o passo a passo para criar novos mapas no editor.
